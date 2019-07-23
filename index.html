@@ -4,16 +4,34 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title></title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel = "stylesheet"  type = "text/css" href = "css/index.css" />
+	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
     <script type="text/javascript">
-    	
-   		document.addEventListener('plusready', function(){
-   			//console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。"
-   			
-   		});
-   		
+		function clickItem() {
+			alert(1)
+		}
+		window.onload = function(){
+			var ff=document.getElementById("day");
+			var startDay = new Date("3/15/2017")
+			var now = new Date()
+			var day = now.getTime() - startDay.getTime()
+			var dayTime = Math.floor( day/ (1000 * 60 * 60 * 24))+1
+			ff.innerHTML="已经在一起" + dayTime + "天";
+		}
     </script>
 </head>
 <body>
-	<div>测试测试吃吃吃</div>
+	<div class="top">
+		<div class="t-main">
+			<div class="t-middle" onclick="clickItem()">
+				<span>Chen Zhang's Love Diary</span>
+			</div>
+			<div id="day" class="t-bottom">
+				<!-- 已经在一起天 -->
+			</div>
+		</div>
+	</div>
 </body>
 </html>
